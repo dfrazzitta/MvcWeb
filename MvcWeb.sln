@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcWeb", "MvcWeb\MvcWeb.csproj", "{49FA1784-00B4-4680-96C5-0C8BC9B7332E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wApi", "wApi\wApi.csproj", "{68D30213-4A3F-4D2F-B626-C85F323C7334}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9597A6F0-6AF3-45F6-B32C-F7B3C9A9D45F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49FA1784-00B4-4680-96C5-0C8BC9B7332E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49FA1784-00B4-4680-96C5-0C8BC9B7332E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49FA1784-00B4-4680-96C5-0C8BC9B7332E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49FA1784-00B4-4680-96C5-0C8BC9B7332E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68D30213-4A3F-4D2F-B626-C85F323C7334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68D30213-4A3F-4D2F-B626-C85F323C7334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68D30213-4A3F-4D2F-B626-C85F323C7334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68D30213-4A3F-4D2F-B626-C85F323C7334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9597A6F0-6AF3-45F6-B32C-F7B3C9A9D45F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9597A6F0-6AF3-45F6-B32C-F7B3C9A9D45F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9597A6F0-6AF3-45F6-B32C-F7B3C9A9D45F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9597A6F0-6AF3-45F6-B32C-F7B3C9A9D45F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8BE2BE1-07F2-4D9C-9268-0E5C656D424E}
+	EndGlobalSection
+EndGlobal

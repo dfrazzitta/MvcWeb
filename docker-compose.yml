@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  mvcweb:
+    image: ${DOCKER_REGISTRY-}mvcweb
+    build:
+      context: .
+      dockerfile: MvcWeb/Dockerfile
+    ports:
+      - 443:443
+
+  wapi:
+    image: ${DOCKER_REGISTRY-}wapi
+    build:
+      context: .
+      dockerfile: wApi/Dockerfile
+    ports:
+      - 443:443

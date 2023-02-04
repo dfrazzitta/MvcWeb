@@ -1,0 +1,20 @@
+﻿
+Remove all running containers - for /F %c in ('docker ps -a -q') do (docker stop %c)
+
+*******************
+
+ add kestrel as below
+ docker-compose - add ports 443:443
+ launchSettings mean nothing
+ right click docker-compose -- set launch there to https://abc
+ register CARoot on windows in Personal - trusted
+
+
+* *************************************************
+
+
+ for the build on compose
+ cmd 
+ cd $(SolutionDir)
+ kompose.exe convert
+ exit
