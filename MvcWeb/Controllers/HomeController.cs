@@ -15,11 +15,13 @@ namespace MvcWeb.Controllers
 
         public IActionResult Index()
         {
+            _logger.Log(LogLevel.Trace, "home/Index");
             return View();
         }
 
         public IActionResult Privacy()
         {
+            _logger.Log(LogLevel.Information, "home/Privacy");
             return View();
         }
 
