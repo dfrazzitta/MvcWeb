@@ -92,7 +92,7 @@ namespace MvcWeb
 
             CreateDbIfNotExists(app);
 
-
+            app.UseHttpLogging();
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -113,7 +113,7 @@ namespace MvcWeb
 
             app.UseMetricServer("/metrics");
 
-            app.UseHttpLogging();
+             
 
             app.UseRouting();
 

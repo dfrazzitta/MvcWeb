@@ -1,6 +1,6 @@
 ﻿using Bogus.DataSets;
 
-namespace MongoDb.Csharp.Samples.Models
+namespace MvcWeb.Models
 {
     public enum Gender
     {

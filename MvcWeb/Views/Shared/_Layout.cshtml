@@ -11,6 +11,75 @@
 </head>
 <body>
     <div class="m-4">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="navbar-brand pb-2" href="#">K8Svc</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"><span class="sr-only">Home</span></a>
+                    </li>
+ 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> MongoDB </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="nav-link text-dark" asp-area="" asp-controller="M" asp-action="Index">Create</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle"  >Google</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Submenu</a></li>
+                                    <li><a class="dropdown-item" href="#">Submenu0</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item dropdown-toggle" href="#">Submenu 1</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Subsubmenu1</a></li>
+                                            <li><a class="dropdown-item" href="#">Subsubmenu1</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item dropdown-toggle" href="#">Submenu 2</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Subsubmenu2</a></li>
+                                            <li><a class="dropdown-item" href="#">Subsubmenu2</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">SQL</a>
+                        <div class="dropdown-menu">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Students" asp-action="Index">Students</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Courses" asp-action="Index">Courses</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Instructors" asp-action="Index">Instructors</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Departments" asp-action="Index">Departments</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Enrollments" asp-action="Index">Enrollments</a>
+
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">Information</a>
+                        </div>
+                    </li>
+                    @*
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    *@
+                </ul>
+            </div>
+            <partial name="_LoginPartial" />
+        </nav>
+    </div>
+@*
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
             <div class="container-fluid">
                 <a href="#" class="navbar-brand">K8svc.net</a>
@@ -19,14 +88,7 @@
                 </button>
                 <div id="navbarCollapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        @*
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        *@
+ 
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Home</a>
                             <div class="dropdown-menu">
@@ -43,6 +105,7 @@
                                 <a href="#" class="dropdown-item">Create Collection</a>
                                 <a href="#" class="dropdown-item">List Collections</a>
                                 <a href="#" class="dropdown-item">Sent Items</a>
+ 
                                 <div class="dropdown-divider"></div>
                                 <a href="#" class="dropdown-item">Trash</a>
                             </div>
@@ -80,6 +143,7 @@
             </div>
         </nav>
     </div>
+    *@
     @*
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">

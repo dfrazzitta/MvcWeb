@@ -1,8 +1,10 @@
 ﻿using Bogus;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Net;
+using System.Text;
 
 namespace MvcWeb.Controllers
 {
@@ -10,6 +12,8 @@ namespace MvcWeb.Controllers
     {
         private readonly ILogger<MongoController> _logger;
         private IConfiguration _configuration;
+        protected MongoClient Client { get; set; }
+
         public MongoController(ILogger<MongoController> logger, IConfiguration configuration)
         {
             _logger = logger;
@@ -17,9 +21,30 @@ namespace MvcWeb.Controllers
         }
 
         // GET: MongoController
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            //var Client = new MongoClient(_configuration.GetValue<string>("MongoConnection"));
+            // var Client = new MongoClient(_configuration.GetValue<string>("MongoConnection"));
+            _logger.Log(LogLevel.Information, "be4 the client");
+            Client = new MongoClient("mongodb://mongodb-replica-0.mongo:27017,mongodb://mongodb-replica-1.mongo:27017/?replicaSet=rs0");
+            _logger.Log(LogLevel.Information, "after the client");
+            _logger.Log(LogLevel.Information, Client.Settings.ReplicaSetName);
+            var rs = Client.Settings.ReplicaSetName;
+
+            var databases = await Client.ListDatabasesAsync();
+            StringBuilder sb = new StringBuilder();
+
+            while (databases.MoveNext())
+            {
+                var currentBatch = databases.Current;
+                 
+                foreach (BsonDocument s in currentBatch)
+                    sb.Append(s.ToString() + "   ");
+
+            }
+            ViewData["goodcall"] = sb.ToString(); //.AddressList[0];
+            ViewData["rsname"] = rs;
+
+            /*
             IPHostEntry hostInfo1 = Dns.GetHostEntry("www.microsoft.com");
             try
             {
@@ -27,10 +52,11 @@ namespace MvcWeb.Controllers
                 ViewData["goodcall"] = hostInfo.AddressList[0];
             }
             catch {
-                ViewData["failedcall"] = "failed DNS call";
+                ViewData["failedcall"] = rs;
             }
+            */
 
-             
+
 
             return View();
         }

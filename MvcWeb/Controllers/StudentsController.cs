@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using MongoDB.Driver;
 using MvcWeb.Data;
 using MvcWeb.Models;
 
@@ -28,6 +29,22 @@ namespace MvcWeb.Controllers
             string searchString,
             int? pageNumber)
         {
+            /*
+            System.Net.IPAddress[] ipAddresses = Dns.GetHostAddresses("mongodb-headless-service");
+            string connectionString = "";
+            foreach (IPAddress in ipAddresses)
+            {
+                if (connectionString = "")
+                    connectionString = "mongodb://";
+                else
+                    connectionString += ",";
+                connectionString += $"{IPAddress.ToString()}:27017";
+            }
+            connectionString += "/database";
+            var client = new MongoClient(connectionString);
+            */
+
+
             IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName()); // `Dns.Resolve()` method is deprecated.
 
             int ct = ipHostInfo.AddressList.Count();
