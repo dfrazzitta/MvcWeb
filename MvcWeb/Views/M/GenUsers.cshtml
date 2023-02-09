@@ -1,18 +1,19 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
 
+@using MvcWeb.SchoolModels.SchoolViewModels
+@using MvcWeb.Models
+
+@model MultiList
 
 <h1>gen users</h1>
 
 <h1>Mongo</h1>
 
-
-@model List<MvcWeb.Models.User>
-
-
+@*{
+    var tr = @ViewData["travelers"];
+    var pp = @ViewData["persons"];
+}*@
+ 
 <table class="table">
     <thead>
         <tr>
@@ -29,27 +30,18 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateOfBirth)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Phone)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Profession">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Address">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
+        @foreach (MvcWeb.Models.Traveler item in Model.travelers)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Age</td>
+                    <td>@item.Activities.FirstOrDefault()</td>
+                    <td>@item.VisitedCountries.FirstOrDefault().TimesVisited</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Name">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Name">Delete</a>
+                    </td>
+                </tr>
+            }
     </tbody>
 </table>
